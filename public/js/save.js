@@ -24,11 +24,11 @@ function saveData(){
 	};
 
 	//POST request to API
-	$.post( "/api/email", dataToSend ,function( data ) {
+	/* $.post( "/api/email", dataToSend ,function( data ) {
 	  console.log("Save result:", data );
 	}).fail(function() {
     alert( "Error saving data" );
-  	});
+  	}); */
 
     //Close the Save window
     $('#myModal').modal('hide');
