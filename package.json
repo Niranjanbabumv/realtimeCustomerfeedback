@@ -15,7 +15,7 @@
     "cfenv": "^1.0.4",
     "express": "^4.13.4",
     "gulp": "3.5.x",
-    "nodemailer": "4.0.x",
+    "nodemailer": "latest",
     "watson-developer-cloud": "^1.8.0"
   },
   "devDependencies": {
