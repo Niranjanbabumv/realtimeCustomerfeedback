@@ -21,7 +21,6 @@ var express   = require('express'),
   bodyParser  = require('body-parser'),
   cfenv       = require('cfenv'),
   watson      = require('watson-developer-cloud');
-const nodemailer  = require('nodemailer');
 
 // Set up environment variables
 // cfenv provides access to your Cloud Foundry environment
@@ -87,34 +86,7 @@ app.post('/api/tone', function(req, res, next) {
 });
 
 //email sending
-app.post('/api/email', function(req, res, next) {
-var emailData = req.body;
-console.log(emailData);
-var transporter = nodemailer.createTransport({
-  service: 'gmail',
-  host : 'smtp.gmail.com',
-  auth: {
-    user: 'niranjan.ibm@gmail.com',
-    pass: 'Kanipaka@143'
-  }
-});
 
-var mailOptions = {
-  from: 'niranjan.ibm@gmail.com',
-  to: 'niranjanbabu.mv@cognizant.com',
-  subject: 'Sending Email using Node.js',
-  text: 'That was easy!'
-};
-
-transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Email sent: ' + info.response);
-  }
-});
-
-});
 
 // error-handler settings
 require('./config/error-handler')(app);
