@@ -20,8 +20,8 @@ var express   = require('express'),
   app         = express(),
   bodyParser  = require('body-parser'),
   cfenv       = require('cfenv'),
-  watson      = require('watson-developer-cloud'),
-  nodemailer  = require('nodemailer');
+  watson      = require('watson-developer-cloud');
+const nodemailer  = require('nodemailer');
 
 // Set up environment variables
 // cfenv provides access to your Cloud Foundry environment
@@ -92,6 +92,7 @@ var emailData = req.body;
 console.log(emailData);
 var transporter = nodemailer.createTransport({
   service: 'gmail',
+  host : 'smtp.gmail.com',
   auth: {
     user: 'niranjan.ibm@gmail.com',
     pass: 'Kanipaka@143'
